@@ -2,7 +2,7 @@ var List = {
     view: function() {
         return m('table.sticky-table',
       m('thead',
-        m('tr',m('th','BD'),m('th',{colspan: 18},'ALUMNO'),m('th',{colspan: 6},'TUTOR'))
+        m('tr',m('th','BD'),m('th',{colspan: 18},'ALUMNO'),m('th',{colspan: 6},'TUTOR')),
         m('tr',
           m('th','Objeto'),
           m('th','CURP'),m('th','NOMBRE'),m('th','P APELLIDO'),m('th','S APELLIDO'),
