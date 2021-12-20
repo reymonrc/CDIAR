@@ -79,5 +79,6 @@ body, .input, .button {
 }
 
 .sticky-table td {
+  border: 1px solid grey;
   padding-right: 1em; /* Prevent Firefox overlap scrollbar */
 }
