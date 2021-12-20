@@ -23,7 +23,7 @@ var List = {
              m('td', {Title:'VARCHAR2(14 BYTE)'}, 'TELEFONO_CELULAR'),m('td', {Title:'VARCHAR2(15 BYTE)'}, 'TEL_OTRO'),m('td', {Title:'VARCHAR2(128 BYTE)'}, 'EMAIL'),m('td', {Title:'VARCHAR2(1128 BYTE)'}, 'EMAIL_ADICIONAL'),
              m('td', {Title:'VARCHAR2(192 BYTE)'}, 'MADRE_NOMBRE'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'MADRE_PRIMERAPELLIDO'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'MADRE_SEGUNDO_APELLIDO'),
              m('td', {Title:'VARCHAR2(192 BYTE)'}, 'PADRE_NOMBRE'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'PADRE_PRIMERAPELLIDO'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'PADRE_SEGUNDO_APELLIDO')
-             )
+           ),
              m('tr', m('td.list-item', 'ALUMNOS_CORREOS'), m('td', {Title:'VARCHAR2(18 BYTE)'}, 'S_CURP'), m('td', {Title:'VARCHAR2(60 BYTE)'}, 'S_NOMBRE'),
               m('td', {Title:'VARCHAR2(120 BYTE)'},'S_APELLIDOS'), m('td'),
               m('td', {Title:'VARCHAR2(32 BYTE)'}, 'NIVEL_ESCOLAR'), m('td', {Title:'NUMBER(1,0)'},'GRADO'), m('td','GRUPO'), m('td'),
