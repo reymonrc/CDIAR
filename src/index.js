@@ -12,8 +12,8 @@ var List = {
 		  m('th','NOMBRE'),m('th','P APELLIDO'),m('th','S APELLIDO')
         )
       ),
-      m('tbody', 
-            m('tr', m('td', 'PREINSCRIPCIONES_DATOS'), m('td', {Title:'VARCHAR2(18 BYTE)'}, 'CURP'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'NOMBRES'),
+      m('tbody',
+            m('tr', m('td.list-item', 'PREINSCRIPCIONES_DATOS'), m('td', {Title:'VARCHAR2(18 BYTE)'}, 'CURP'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'NOMBRES'),
              m('td', {Title:'VARCHAR2(64 BYTE)'},'PRIMERAPELLIDO'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'SEGUNDOAPELLIDO'),
              m('td', {Title:'VARCHAR2(32 BYTE)'}, 'NIVEL_EDUCATIVO'), m('td', {Title:'NUMBER(1,0)'},'GRADO'), m('td'), m('td'),
              m('td', {Title:'VARCHAR2(128 BYTE)'},'DOMICILIO_CALLE'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'DOMICILIO_NUMERO'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'DOMICILIO_ENTIDAD'),
