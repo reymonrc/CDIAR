@@ -8,7 +8,7 @@ var List = {
         )
       ),
       m('tbody', 
-            m('tr', m('td', 'm-view'), m('td', 'CURP_ALUMNO'), m('td', 'NOMBRES'))
+            m('tr', m('td', 'PREINSCRIPCIONES_DATOS'), m('td', {title='VARCHAR2(18 BYTE)'}, 'CURP'), m('td', {title='VARCHAR2(64 BYTE)'}, 'NOMBRES'))
        ))
     }
 }
