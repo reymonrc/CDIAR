@@ -10,7 +10,7 @@ var UserList = {
       ),
       m('tbody', 
             m('tr', m('td', 'm-view'), m('td', {title='Sorpresa'}, 'CURP_ALUMNO'), m('td', {title='CHAR(25)'}, 'NOMBRES'))
-       )
+       ))
     }
 }
 
