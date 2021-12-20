@@ -4,7 +4,7 @@ var UserList = {
         return m('table.sticky-table',
       m('thead',
         m('tr',
-          m('th','Objeto')
+          m('th','Objeto'),
           m('th','CURP alumno'),m('th','NOMBRE alumno')
         )
       ),
