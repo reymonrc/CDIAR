@@ -27,9 +27,9 @@ var List = {
              m('tr', m('td.list-item', 'ALUMNOS_CORREOS'), m('td', {Title:'VARCHAR2(18 BYTE)'}, 'S_CURP'), m('td', {Title:'VARCHAR2(60 BYTE)'}, 'S_NOMBRE'),
               m('td', {Title:'VARCHAR2(120 BYTE)'},'S_APELLIDOS'), m('td'),
               m('td', {Title:'VARCHAR2(32 BYTE)'}, 'NIVEL_ESCOLAR'), m('td', {Title:'NUMBER(1,0)'},'GRADO'), m('td','GRUPO'), m('td'),
-              m('td', {Title:'VARCHAR2(128 BYTE)'},'CORREO_GOOGLE')m('td', {Title:'VARCHAR2(128 BYTE)'},'CORREO_MICROSOFT')
+              m('td', {Title:'VARCHAR2(128 BYTE)'},'CORREO_GOOGLE'), m('td', {Title:'VARCHAR2(128 BYTE)'},'CORREO_MICROSOFT'),
               m('td'), m('td'), m('td'),m('td'), m('td'), m('td'),m('td'),m('td'),m('td'),m('td'),m('td'),m('td'),m('td'),m('td'),m('td'),m('td'),
-              m('td', {Title:'VARCHAR2(10 BYTE)'}, 'S_CCT'),m('td', {Title:'VARCHAR2(32 BYTE)'}, 'DIR_GENERAL')
+              m('td', {Title:'VARCHAR2(10 BYTE)'}, 'S_CCT'), m('td', {Title:'VARCHAR2(32 BYTE)'}, 'DIR_GENERAL')
               )
        ))
     }
