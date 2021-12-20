@@ -1,5 +1,4 @@
 var UserList = {
-    oninit: User.loadList,
     view: function() {
         return m('table.sticky-table',
       m('thead',
