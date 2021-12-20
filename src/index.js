@@ -1,4 +1,4 @@
-var UserList = {
+var List = {
     view: function() {
         return m('table.sticky-table',
       m('thead',
