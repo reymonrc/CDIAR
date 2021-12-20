@@ -19,6 +19,7 @@ body, .input, .button {
 }
 
 .list-item {
+  background-color: #DDD;
   background: #fafafa;
   border: 1px solid #ddd;
   color: #333;
@@ -72,6 +73,7 @@ body, .input, .button {
 }
 
 .sticky-table th {
+  border: 1px solid black;
   text-align: center;
   position: sticky;
   top: 0;
