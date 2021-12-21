@@ -1,11 +1,10 @@
 body, .input, .button {
-  font: normal 12px Verdana;
+  font: normal 10px Verdana;
   margin: 10px;
 }
 
 .layout {
-  margin: 4px auto;
-  max-width: 1000px;
+  margin: 1px auto;
 }
 
 .menu {
