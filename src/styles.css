@@ -63,12 +63,17 @@ body, .input, .button {
 }
 
 .sticky-table {
-  display: inline-block;
+  display: block;
   max-height: 30em;
-  overflow-x: hidden; /* Prevent Firefox h-scrollbar */
+  overflow-x: auto; /* Prevent Firefox h-scrollbar */
   overflow-y: auto;
   border: #666 1px solid;
   border-collapse: collapse;
+}
+
+.sticky-table tbody thead {
+  display: table;
+  width: 100%;
 }
 
 .sticky-table th {
@@ -82,4 +87,26 @@ body, .input, .button {
 .sticky-table td {
   border: 1px solid grey;
   padding-right: 1em; /* Prevent Firefox overlap scrollbar */
+}
+
+.dtHorizontalExampleWrapper {
+max-width: 600px;
+margin: 0 auto;
+}
+
+#dtHorizontalExample th, td {
+white-space: nowrap;
+}
+
+sticky-table.dataTable thead .sorting:after,
+sticky-table.dataTable thead .sorting:before,
+sticky-table.dataTable thead .sorting_asc:after,
+sticky-table.dataTable thead .sorting_asc:before,
+sticky-table.dataTable thead .sorting_asc_disabled:after,
+sticky-table.dataTable thead .sorting_asc_disabled:before,
+sticky-table.dataTable thead .sorting_desc:after,
+sticky-table.dataTable thead .sorting_desc:before,
+sticky-table.dataTable thead .sorting_desc_disabled:after,
+sticky-table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
 }

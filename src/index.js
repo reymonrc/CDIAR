@@ -1,3 +1,4 @@
+
 data = {
   BD: ['Servidor','Objeto'],
   ALUMNO: ['CICLO','CURP','NOMBRE','PRIMER_APELLIDO','SEGUNDO_APELLIDO',
@@ -175,7 +176,7 @@ blocks = Object.keys(servers)
 var Table = {
   view: function() {
     return(m('.col-xs-12',
-      m('table.sticky-table',
+      m('table.sticky-table.table-striped.table-bordered.table-sm', {id: 'dtHorizontalExample'},
         m('thead',
           m('tr', headers.map (function(d) {return m('th', {colspan: data[d].length},d)})),
           m('tr', headers.map (function(d) {return data[d].map( function(f) { return m('th', f.replace(/_/gi," "))} )}))
