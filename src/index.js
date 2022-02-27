@@ -1,5 +1,17 @@
+data = [
+  ["Marca","Numero"],
+  ["Audi", 3],
+  ["BMW", 2],
+  ["Mercedes", 1],
+  ["Opel", 1],
+  ["Volkswagen", 8],
+  ["Nissan", 12]
+];
+chartType = "PieChart";
+containerId = "chart1";
+options = {"title":"Carros en la calle"};
 
-data = {
+datos = {
   BD: ['Servidor','Objeto'],
   ALUMNO: ['CICLO','CURP','NOMBRE','PRIMER_APELLIDO','SEGUNDO_APELLIDO',
           'NIVEL','GRADO','GRUPO','GENERO', 'CORREO_GOOGLE','CORREO_OTRO',
@@ -178,7 +190,7 @@ servers = {
     }
 }
 
-headers = Object.keys(data)
+headers = Object.keys(datos)
 blocks = Object.keys(servers)
 
 var Table = {
@@ -186,37 +198,37 @@ var Table = {
     return(m('.col-xs-12',
       m('table.sticky-table.table-striped.table-bordered.table-sm', {id: 'dtHorizontalExample'},
         m('thead',
-          m('tr', headers.map (function(d) {return m('th', {colspan: data[d].length},d)})),
-          m('tr', headers.map (function(d) {return data[d].map( function(f) { return m('th', f.replace(/_/gi," "))} )}))
+          m('tr', headers.map (function(d) {return m('th', {colspan: datos[d].length},d)})),
+          m('tr', headers.map (function(d) {return datos[d].map( function(f) { return m('th', f.replace(/_/gi," "))} )}))
         ),
       m('tbody',  blocks.map (function(b) {tabs = Object.keys(servers[b]['TABLAS']);
         return(tabs.map(function(t){ if (arguments[1] == 0) {
         return(m('tr', m('th',{rowspan: tabs.length},servers[b]['SCHEMA'],' IP: ',servers[b]['IP']),
           m('td.list-item',t),
-          data['ALUMNO'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
+          datos['ALUMNO'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
             return m('td',{Title:servers[b]['TABLAS'][t][d][0]},servers[b]['TABLAS'][t][d][1])}
             else {return m('td')}}),
-          data['TUTOR'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
+          datos['TUTOR'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
             return m('td',{Title:servers[b]['TABLAS'][t][d][0]},servers[b]['TABLAS'][t][d][1])}
             else {return m('td')}}),
-          data['ESCUELA'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
+          datos['ESCUELA'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
             return m('td',{Title:servers[b]['TABLAS'][t][d][0]},servers[b]['TABLAS'][t][d][1])}
             else {return m('td')}}),
-            data['INTERNO'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
+            datos['INTERNO'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
               return m('td',{Title:servers[b]['TABLAS'][t][d][0]},servers[b]['TABLAS'][t][d][1])}
               else {return m('td')}})
           )) } else {
           return(m('tr', m('td.list-item',t),
-            data['ALUMNO'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
+            datos['ALUMNO'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
               return m('td',{Title:servers[b]['TABLAS'][t][d][0]},servers[b]['TABLAS'][t][d][1])}
               else {return m('td')}}),
-            data['TUTOR'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
+            datos['TUTOR'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
               return m('td',{Title:servers[b]['TABLAS'][t][d][0]},servers[b]['TABLAS'][t][d][1])}
               else {return m('td')}}),
-            data['ESCUELA'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
+            datos['ESCUELA'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
               return m('td',{Title:servers[b]['TABLAS'][t][d][0]},servers[b]['TABLAS'][t][d][1])}
               else {return m('td')}}),
-              data['INTERNO'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
+              datos['INTERNO'].map(function(d){if (servers[b]['TABLAS'][t][d] != null) {
                 return m('td',{Title:servers[b]['TABLAS'][t][d][0]},servers[b]['TABLAS'][t][d][1])}
                 else {return m('td')}})
             )) }
@@ -229,7 +241,8 @@ var Layout = {
     view: function(vnode) {
         return m('main.layout', [
           m('h1','ORACLE'),
-            m('section', vnode.children)
+          m('section', vnode.children),
+          m('div', {id:'chart1', style:'width:600px; height:300px'})
         ])
     }
 }
@@ -253,9 +266,9 @@ var Layout = {
 
 var App = {
     view: function() {
-      return(m ('div',
-        m(Layout, m(Table))
-     ))
+      return(
+     m ('div', m(Layout, m(Table)))
+    )
    }}
 
 m.route(document.body, '/list', {
