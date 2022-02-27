@@ -148,9 +148,14 @@ servers = {
           USUARIO_CREACION: ['VARCHAR2(32 BYTE)','USUARIO_CREACION'],
           FECHA_CREACION: ['DATE','FECHA_CREACION'],
           USUARIO_MODIFICACION: ['VARCHAR2(32 BYTE)','USUARIO_MODIFICACION'],
-          FECHA_MODIFICACION: ['DATE','FECHA_ACTUALIZACION']
-        }
+          FECHA_MODIFICACION: ['DATE','FECHA_ACTUALIZACION']},
+        W_BECARIOS_2121A_PROMS_ALL: {
+          ID: ['NUMBER','ID'],
 
+        },
+        W_BECARIOS_RENOVANTES_2122A: {
+
+        }
       }
     },
   www6: { IP: '1.214', SCHEMA: 'siie',
@@ -219,62 +224,6 @@ var Table = {
         )
       }))
 )))}}
-
-
-var List = {
-    view: function() {
-        return m('table.sticky-table',
-      m('thead',
-          m('tr', headers.map (function(d) {return m('th', {colspan: data[d].length},d)})),
-          m('tr', headers.map (function(d) {return data[d].map( function(f) { return m('th', f.replace(/_/gi," "))} )}))
-        ),
-
-      m('tbody',
-            m('tr',m('th',{rowspan: 3},'procesa_informacion IP: 2.2'), m('td.list-item', 'PREINSCRIPCIONES_DATOS'),m('td'), m('td', {Title:'VARCHAR2(18 BYTE)'}, 'CURP'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'NOMBRES'),
-             m('td', {Title:'VARCHAR2(64 BYTE)'},'PRIMERAPELLIDO'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'SEGUNDOAPELLIDO'),
-             m('td', {Title:'VARCHAR2(32 BYTE)'}, 'NIVEL_EDUCATIVO'), m('td', {Title:'NUMBER(1,0)'},'GRADO'), m('td'), m('td'),m('td'),m('td'),
-             m('td', {Title:'VARCHAR2(128 BYTE)'},'DOMICILIO_CALLE'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'DOMICILIO_NUMERO'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'DOMICILIO_ENTIDAD'),
-             m('td', {Title:'VARCHAR2(128 BYTE)'},'DOMICILIO_MUNICIPIO'), m('td', {Title:'VARCHAR2(128 BYTE)'}, 'DOMICILIO_COLONIA'), m('td', {Title:'VARCHAR2(5 BYTE)'}, 'DOMICILIO_CODIGO_POSTAL'),
-             m('td', {Title:'VARCHAR2(14 BYTE)'}, 'TELEFONO_CELULAR'),m('td', {Title:'VARCHAR2(15 BYTE)'}, 'TEL_OTRO'),m('td', {Title:'VARCHAR2(128 BYTE)'}, 'EMAIL'),m('td', {Title:'VARCHAR2(1128 BYTE)'}, 'EMAIL_ADICIONAL'),
-             m('td', {Title:'VARCHAR2(192 BYTE)'}, 'MADRE_NOMBRE'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'MADRE_PRIMERAPELLIDO'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'MADRE_SEGUNDO_APELLIDO'),
-             m('td', {Title:'VARCHAR2(192 BYTE)'}, 'PADRE_NOMBRE'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'PADRE_PRIMERAPELLIDO'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'PADRE_SEGUNDO_APELLIDO'),m('td'),m('td')
-           ),
-             m('tr', m('td.list-item', 'ALUMNOS_CORREOS'),m('td'), m('td', {Title:'VARCHAR2(18 BYTE)'}, 'S_CURP'), m('td', {Title:'VARCHAR2(60 BYTE)'}, 'S_NOMBRE'),
-              m('td', {Title:'VARCHAR2(120 BYTE)'},'S_APELLIDOS'), m('td'),
-              m('td', {Title:'VARCHAR2(32 BYTE)'}, 'NIVEL_ESCOLAR'), m('td', {Title:'NUMBER(1,0)'},'GRADO'), m('td', {Title:'VARCHAR2(1 BYTE)'},'GRUPO'), m('td'),
-              m('td', {Title:'VARCHAR2(128 BYTE)'},'CORREO_GOOGLE'), m('td', {Title:'VARCHAR2(128 BYTE)'},'CORREO_MICROSOFT'),
-              m('td'), m('td'), m('td'),m('td'), m('td'), m('td'),m('td'),m('td'),m('td'),m('td'),m('td'),m('td'),m('td'),m('td'),m('td'),m('td'),
-              m('td', {Title:'VARCHAR2(10 BYTE)'}, 'S_CCT'),m('td', {Title:'VARCHAR2(32 BYTE)'}, 'DIR_GENERAL')
-            ),
-              m('tr', m('td.list-item', 'SOLICITUDES_INSCRIPCION_DATOS'),m('td',{Title:'CHAR(9 BYTE)'},'CICLO_ESCOLAR'), m('td', {Title:'VARCHAR2(18 BYTE)'}, 'CURP'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'NOMBRES'),
-               m('td', {Title:'VARCHAR2(64 BYTE)'},'PRIMERAPELLIDO'), m('td',{Title:'VARCHAR2(64 BYTE)'},'SEGUNDOAPELLIDO'),
-               m('td'), m('td'), m('td'), m('td'),m('td'), m('td'),
-               m('td'), m('td'), m('td'),m('td'), m('td'), m('td'),m('td',{Title:'VARCHAR2(64 BYTE)'},'TELEFONO_CONTACTO'),m('td'),m('td',{Title:'VARCHAR2(256 BYTE)'},'EMAIL'),m('td'),
-               m('td',{Title:'VARCHAR2(64 BYTE)'},'TUTOR_NOMBRES'),m('td',{Title:'VARCHAR2(64 BYTE)'},'TUTOR_PRIMERAPELLIDO'),m('td',{Title:'VARCHAR2(64 BYTE)'},'TUTOR_SEGUNDOAPELLIDO'),m('td'),m('td'),m('td'),
-               m('td'),m('td')
-             ),
-/*             m('tr', m('td.list-item', 'PADRON_ALUMNOS_FIDEGAR'),m('td', {Title:'VARCHAR2(9 BYTE)'},'CICLO_ESCOLAR'), m('td', {Title:'VARCHAR2(18 BYTE)'}, 'ALUMNO_CURP'), m('td', {Title:'VARCHAR2(128 BYTE)'}, 'ALUMNO_NOMBRE'),
-              m('td', {Title:'VARCHAR2(128 BYTE)'},'ALUMNO_APATERNO'), m('td', {Title:'VARCHAR2(128 BYTE)'}, 'ALUMNO_AMATERNO'),
-              m('td', {Title:'VARCHAR2(64 BYTE)'}, 'NIVEL_EDUCATIVO'), m('td', {Title:'NUMBER(1,0)'},'GRADO'), m('td'), m('td'),m('td'),m('td'),
-              m('td', {Title:'VARCHAR2(128 BYTE)'},'DOMICILIO_CALLE'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'DOMICILIO_NUMERO'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'DOMICILIO_ENTIDAD'),
-              m('td', {Title:'VARCHAR2(128 BYTE)'},'DOMICILIO_MUNICIPIO'), m('td', {Title:'VARCHAR2(128 BYTE)'}, 'DOMICILIO_COLONIA'), m('td', {Title:'VARCHAR2(5 BYTE)'}, 'DOMICILIO_CODIGO_POSTAL'),
-              m('td', {Title:'VARCHAR2(14 BYTE)'}, 'TELEFONO_CELULAR'),m('td', {Title:'VARCHAR2(15 BYTE)'}, 'TEL_OTRO'),m('td', {Title:'VARCHAR2(128 BYTE)'}, 'EMAIL'),m('td', {Title:'VARCHAR2(1128 BYTE)'}, 'EMAIL_ADICIONAL'),
-              m('td', {Title:'VARCHAR2(192 BYTE)'}, 'MADRE_NOMBRE'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'MADRE_PRIMERAPELLIDO'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'MADRE_SEGUNDO_APELLIDO'),
-              m('td', {Title:'VARCHAR2(192 BYTE)'}, 'PADRE_NOMBRE'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'PADRE_PRIMERAPELLIDO'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'PADRE_SEGUNDO_APELLIDO'),m('td'),m('td')
-            ),*/
-            m('tr'),
-            m('tr',m('th',{rowspan: 1},'siie_consulta IP: 1.214'), m('td.list-item', 'V_ALUMNOS_INSCRITOS'),m('td'), m('td', {Title:'VARCHAR2(18 BYTE)'}, 'CURP'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'NOMBRES'),
-             m('td', {Title:'VARCHAR2(64 BYTE)'},'PRIMERAPELLIDO'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'SEGUNDOAPELLIDO'),
-             m('td', {Title:'VARCHAR2(32 BYTE)'}, 'NIVEL_EDUCATIVO'), m('td', {Title:'NUMBER(1,0)'},'GRADO'), m('td'), m('td'),m('td'),m('td'),
-             m('td', {Title:'VARCHAR2(128 BYTE)'},'DOMICILIO_CALLE'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'DOMICILIO_NUMERO'), m('td', {Title:'VARCHAR2(64 BYTE)'}, 'DOMICILIO_ENTIDAD'),
-             m('td', {Title:'VARCHAR2(128 BYTE)'},'DOMICILIO_MUNICIPIO'), m('td', {Title:'VARCHAR2(128 BYTE)'}, 'DOMICILIO_COLONIA'), m('td', {Title:'VARCHAR2(5 BYTE)'}, 'DOMICILIO_CODIGO_POSTAL'),
-             m('td', {Title:'VARCHAR2(14 BYTE)'}, 'TELEFONO_CELULAR'),m('td', {Title:'VARCHAR2(15 BYTE)'}, 'TEL_OTRO'),m('td', {Title:'VARCHAR2(128 BYTE)'}, 'EMAIL'),m('td', {Title:'VARCHAR2(1128 BYTE)'}, 'EMAIL_ADICIONAL'),
-             m('td', {Title:'VARCHAR2(192 BYTE)'}, 'MADRE_NOMBRE'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'MADRE_PRIMERAPELLIDO'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'MADRE_SEGUNDO_APELLIDO'),
-             m('td', {Title:'VARCHAR2(192 BYTE)'}, 'PADRE_NOMBRE'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'PADRE_PRIMERAPELLIDO'),m('td', {Title:'VARCHAR2(64 BYTE)'}, 'PADRE_SEGUNDO_APELLIDO'),m('td'),m('td')
-           ),
-       ))
-    }
-}
 
 var Layout = {
     view: function(vnode) {

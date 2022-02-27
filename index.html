@@ -5,9 +5,43 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>CDIAR</title>
         <link href="src/styles.css" rel="stylesheet" />
+        <script>
+        data = [
+          ["Car","Number"],
+          ["Audi", 3],
+          ["BMW", 2],
+          ["Mercedes", 1],
+          ["Opel", 3],
+          ["Volkswagen", 4]
+        ];
+        chartType = "ColumnChart";
+        containerId = "chart1";
+        options = {"title":"Cars parked in my road"};
+        </script>
+            <!-- Script 2 — Load the AJAX API -->
+        <script src="https://www.gstatic.com/charts/loader.js">
+        </script>
+        <script>
+        // Load the Visualization API and the corechart package
+        google.charts.load('current', {'packages':['corechart']});
+        // Set a callback for when the API is loaded
+        google.charts.setOnLoadCallback(drawChart);
+
+        // This is the callback function which actually draws the chart
+        function drawChart(){
+          google.visualization.drawChart({
+            "containerId": containerId,
+            "dataTable": data,
+            "chartType": chartType,
+            "options": options
+          });
+        }
+        </script>
     </head>
     <body>
         <script src="https://unpkg.com/mithril/mithril.js"></script>
         <script src="src/index.js"></script>
+        <!-- the div where a chart will be displayed -->
+        <div style="width:600px; height:300px" id="chart1"></div>
     </body>
 </html>
